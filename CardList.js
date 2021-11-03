@@ -22,8 +22,3 @@ const CardList = ({robots}) => {
 }
 
 export default CardList;
-
-
-	
-
-
