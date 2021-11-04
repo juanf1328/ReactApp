@@ -12,5 +12,5 @@ const Searchbox = ({searchfield, searchChange}) => {
 		</div>
 
 		);
-}
+} 
 export default Searchbox;

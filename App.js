@@ -1,9 +1,10 @@
 import React from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
+import Scroll from './Scroll';
 import './App.css';
 
-class App extends component{
+class App extends React.component{
   constructor(){
     super()
     this.state={
@@ -21,7 +22,7 @@ componentDidMount(){
   onSearchChange = (event) => {
     this.setState({searchfield:event.target.value})
   }
-}
+
 
 render(){
   const filteredRobots = this.state.robots.filter(robots =>{
@@ -32,11 +33,14 @@ render(){
   }else{
   return(
     <div className='tc'>
-    <h1 className='f1'>Robofriends</h1>
-    <SearchBox SearchChange={this.onSearchChange}/>
-    <CardList robots={filteredRobots} />
-    </div>
+       <h1 className='f1'>Robofriends</h1>
+        <SearchBox SearchChange={this.onSearchChange}/>
+        <Scroll>
+          <CardList robots={filteredRobots} />  
+         </Scroll>
+      </div>
     );
+  }
 }
 }
 export default App;
